@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Property Tax Calculation Result</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+			background: url('https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg') no-repeat center center fixed;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .navbar {
+            background-color: rgba(255, 126, 95, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .navbar-brand {
+            color: #fff !important;
+        }
+        .nav-link {
+            color: #fff !important;
+        }
+        .nav-link:hover {
+            color: #feb47b !important;
+        }
+        h1 {
+            color: #ff7e5f;
+        }
+        p {
+            font-size: 1.1em;
+        }
+        p span {
+            font-weight: bold;
+        }
+        button {
+            background-color: #ff7e5f;
+            color: #fff;
+            border: none;
+        }
+        button:hover {
+            background-color: #feb47b;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Property Tax Calculator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Calculation Result</h1>
+        <p>Total Purchase Price: <span th:text="${propertyTax.purchasePrice}"></span></p>
+        <p>Tax Deductions: <span th:text="${taxToPay}"></span></p>
+        <p>Stamp Duty: <span th:text="${stampDutyAmount}"></span></p>
+        <p>Registration Fee: <span th:text="${registrationFeeAmount}"></span></p>
+        <p>TDS: <span th:text="${tdsAmount}"></span></p>
+        <p>GST (Under-Construction): <span th:text="${gstAmount}"></span></p>
+        <p>Total Price Including Tax: <span th:text="${totalPriceIncTax}"></span></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
